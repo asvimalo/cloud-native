@@ -1,0 +1,9 @@
+go 1.21.6
+
+// go work init ./hello
+// go work use ./example/hello
+
+use (
+	./hello
+	
+)
