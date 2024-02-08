@@ -3,5 +3,8 @@ package main
 func main() {
 	//loopdecimal()
 	//loopbetween()
-	minicalculator()
+	//minicalculator()
+	//addition()
+	//printMinorNumbers()
+	rollingDice()
 }

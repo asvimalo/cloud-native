@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-    "os/exec"
+	"os/exec"
+	"math/rand"
 )
 
 func loopdecimal() {
@@ -60,8 +61,8 @@ func minicalculator() {
 
 	for {
 		cmd := exec.Command("clear")
-    	cmd.Stdout = os.Stdout
-    	cmd.Run()
+		cmd.Stdout = os.Stdout
+		cmd.Run()
 		fmt.Print("Enter first number: ")
 		fmt.Scan(&number1)
 		fmt.Print("Enter second number: ")
@@ -77,4 +78,64 @@ func minicalculator() {
 		}
 	}
 
+}
+
+func addition() {
+	/*
+		Be användaren mata in ett tal. Spara värdet i en variabel. Upprepa detta 10 gånger. För
+		varje gång lägg till det inmatade värdet till variabelns värde. När det är klart skriv ut-
+		Summan av det du matat in är: summan.
+	*/
+	var number int
+	sum := 0
+	count := 10
+
+	for i := 0; i < count; i++ {
+		fmt.Print("Enter a number: ")
+		fmt.Scan(&number)
+		sum += number
+	}
+	fmt.Printf("Sum = %d\n", sum)
+	
+}
+
+func printMinorNumbers(){
+	/*
+		Skapa ett program där användaren får mata in ett tal. Låt sedan programmet skriva ut
+		alla siffor som är mindre än det inmatade talet men större än 0. Lös detta med en
+		loop.
+	*/
+	var number int
+	
+	fmt.Print("Enter a number: ")
+	fmt.Scan(&number)
+	for i := 1; i < number; i++ {
+		fmt.Printf("Number: %d\n", i)
+	}
+}
+
+func rollingDice(){
+	/*
+		Rolling the dice:
+		Kasta två tärningar” och visa resultatet enligt skärmdump ända tills man INTE svarar ”y” eller ”yes” på frågan om igen
+	*/
+	var answer string
+	max := 6
+	min := 1
+	for  {
+		cmd := exec.Command("clear")
+		cmd.Stdout = os.Stdout
+		cmd.Run()
+		fmt.Println("Rolling dices... ")
+		fmt.Println("The values are: ")
+		// generate a random integer between 1 and 6
+		fmt.Println(rand.Intn(max-min) + min)
+		fmt.Println(rand.Intn(max-min) + min)
+
+		fmt.Print("Do you want to continue rolling dice (y/n): ")
+		fmt.Scan(&answer)
+		if answer != "yes" && answer != "y" {
+			break
+		}
+	}
 }
