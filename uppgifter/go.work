@@ -1,0 +1,13 @@
+go 1.21.6
+
+// go work init ./hello
+// go work use ./example/hello
+
+use (
+	./uppgift-v1/console-app
+	./uppgift-v1/expression-datatypes
+	./uppgift-v1/if-app
+	./uppgift-v1/loop-app
+	./uppgift-v1/name-surname
+	./uppgift-v1/string-app
+)
